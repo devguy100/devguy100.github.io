@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cipher</title>
   <style>
     :root {
-      --primary: #a259ff;
-      --secondary: #4facfe;
-      --bg: #f0f4ff;
-      --text: #2a2a2a;
+      --purple: #a259ff;
+      --dark-purple: #6226e5;
+      --bg: #0b0b0b;
+      --text: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
       background: var(--bg);
+      font-family: 'Segoe UI', sans-serif;
       color: var(--text);
       scroll-behavior: smooth;
     }
 
     header {
-      background: linear-gradient(to right, var(--primary), var(--secondary));
+      position: sticky;
+      top: 0;
+      width: 100%;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to right, var(--purple), var(--dark-purple));
+      background-color: rgba(0, 0, 0, 0.4);
       z-index: 1000;
+      animation: fadeIn 1s ease-out;
     }
 
     header h1 {
       color: white;
       font-size: 1.5rem;
-      animation: fadeIn 1s ease-out;
     }
 
     nav a {
@@ -51,51 +59,58 @@
 
     .hero {
       text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(to bottom, #ffffff, #e1ecff);
-      animation: fadeInUp 1s ease-out;
+      padding: 120px 20px 80px;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero h2 {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+      color: var(--purple);
+      text-shadow: 0 0 5px rgba(162, 89, 255, 0.3);
     }
 
     .hero button {
-      background: var(--primary);
-      color: white;
-      border: none;
+      background: rgba(162, 89, 255, 0.15);
+      border: 2px solid var(--purple);
+      color: var(--text);
       padding: 1rem 2rem;
       font-size: 1.2rem;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
+      backdrop-filter: blur(4px);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .hero button:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 15px rgba(162, 89, 255, 0.4);
     }
 
     .discord-btn {
       margin-top: 20px;
-      background: var(--secondary);
+      border-color: var(--dark-purple);
     }
 
     .faq {
-      padding: 50px 20px;
+      padding: 60px 20px;
       max-width: 800px;
       margin: auto;
-      animation: fadeIn 1.2s ease-in-out;
     }
 
     .faq h2 {
       text-align: center;
       margin-bottom: 30px;
-      color: var(--primary);
+      color: var(--purple);
     }
 
     .faq-item {
-      background: white;
+      background: #1a1a1a;
+      border-left: 4px solid var(--purple);
       border-radius: 8px;
       padding: 15px 20px;
-      margin-bottom: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease;
     }
 
@@ -104,22 +119,22 @@
     }
 
     footer {
-      background: var(--primary);
-      color: white;
+      background: #111;
+      color: #aaa;
       text-align: center;
       padding: 20px 10px;
       margin-top: 50px;
+      font-size: 0.9rem;
     }
 
-    /* Animations */
     @keyframes fadeIn {
-      0% {opacity: 0;}
-      100% {opacity: 1;}
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
 
     @keyframes fadeInUp {
-      0% {opacity: 0; transform: translateY(30px);}
-      100% {opacity: 1; transform: translateY(0);}
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
@@ -144,6 +159,7 @@
 </header>
 
 <section class="hero" id="download">
+  <h2>Cipher, the next best Roblox Executor</h2>
   <button>Download Now</button>
   <br/>
   <button class="discord-btn" id="discord">Join Discord</button>
@@ -153,15 +169,15 @@
   <h2>Frequently Asked Questions</h2>
   <div class="faq-item">
     <strong>What is Cipher?</strong>
-    <p>A lightweight, modern tool for secure communication and sharing.</p>
+    <p>Cipher is a sleek, high-performance Roblox executor with modern tools and a clean UI.</p>
   </div>
   <div class="faq-item">
-    <strong>Is Cipher free?</strong>
-    <p>Yes! It's completely free to use and open-source.</p>
+    <strong>Is Cipher safe?</strong>
+    <p>Yes. It’s designed with protection in mind, ensuring security for all users.</p>
   </div>
   <div class="faq-item">
-    <strong>How do I install Cipher?</strong>
-    <p>Just click the "Download Now" button above and follow the instructions!</p>
+    <strong>How do I install it?</strong>
+    <p>Click "Download Now" and follow the steps in the setup guide provided with it.</p>
   </div>
 </section>
 
